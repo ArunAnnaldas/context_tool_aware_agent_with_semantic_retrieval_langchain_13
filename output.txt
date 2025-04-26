@@ -1,0 +1,58 @@
+
+(base) dummyUser@dummyUsers-MacBook-Air 13_context_tool_agent % python main.py
+/Users/dummyUser/Documents/Learning/AgenticAI/13_context_tool_agent/main.py:13: LangChainDeprecationWarning: Please see the migration guide at: https://python.langchain.com/docs/versions/migrating_memory/
+  conversation_memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+/Users/dummyUser/Documents/Learning/AgenticAI/13_context_tool_agent/main.py:15: LangChainDeprecationWarning: LangChain agents will continue to be supported, but it is recommended for new use cases to be built with LangGraph. LangGraph offers a more flexible and full-featured framework for building agents, including support for tool-calling, persistence of state, and human-in-the-loop workflows. For details, refer to the `LangGraph documentation <https://langchain-ai.github.io/langgraph/>`_ as well as guides for `Migrating from AgentExecutor <https://python.langchain.com/docs/how_to/migrate_agent/>`_ and LangGraph's `Pre-built ReAct agent <https://langchain-ai.github.io/langgraph/how-tos/create-react-agent/>`_.
+  agent = initialize_agent(
+
+🗣️ User: What is 20% of 180?
+/Users/dummyUser/Documents/Learning/AgenticAI/13_context_tool_agent/main.py:36: LangChainDeprecationWarning: The method `Chain.run` was deprecated in langchain 0.1.0 and will be removed in 1.0. Use :meth:`~invoke` instead.
+  response = agent.run(q)
+
+
+> Entering new AgentExecutor chain...
+Thought: Do I need to use a tool? Yes
+Action: calculator_tool
+Action Input: 20% of 180
+Observation: 36.0
+
+
+> Finished chain.
+🤖 Agent: 36.0
+📊 Token Usage: 418 tokens
+
+🔎 Relevant documents from vector memory:
+/Users/dummyUser/Documents/Learning/AgenticAI/13_context_tool_agent/main.py:42: LangChainDeprecationWarning: The method `BaseRetriever.get_relevant_documents` was deprecated in langchain-core 0.1.46 and will be removed in 1.0. Use :meth:`~invoke` instead.
+  docs = retriever.get_relevant_documents(q)
+• Initial context memory.
+
+🗣️ User: Add 30 to that.
+
+
+> Entering new AgentExecutor chain...
+Thought: Do I need to use a tool? Yes
+Action: calculator_tool
+Action Input: 36 + 30
+Observation: 66
+
+
+> Finished chain.
+🤖 Agent: 66
+📊 Token Usage: 449 tokens
+
+🔎 Relevant documents from vector memory:
+• Initial context memory.
+
+🗣️ User: Remind me what the original query was.
+
+
+> Entering new AgentExecutor chain...
+Thought: Do I need to use a tool? No
+AI: The original query was "What is 20% of 180?" and the answer was 36. Then you asked to add 30 to that, which resulted in 66. If you have any more questions or need assistance, feel free to ask!
+
+> Finished chain.
+🤖 Agent: The original query was "What is 20% of 180?" and the answer was 36. Then you asked to add 30 to that, which resulted in 66. If you have any more questions or need assistance, feel free to ask!
+📊 Token Usage: 524 tokens
+
+🔎 Relevant documents from vector memory:
+• Initial context memory.
