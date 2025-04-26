@@ -1,4 +1,4 @@
-# 🧠🔧 FINAL — Context + Tool Aware Agent (LangChain)
+# FINAL — Context + Tool Aware Agent (LangChain)
 
 Demonstrates:
 - Conversation memory tracking (short-term)
